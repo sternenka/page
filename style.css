@@ -1,0 +1,342 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #191f30;
+  color: #fff;
+}
+
+.wrapper {
+display: flex;
+}
+
+
+.sidebar {
+  width: 240px;
+  background-color: #2a354a;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.logo-container {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 100px;
+  margin-bottom: 30px;
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.main-nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.main-nav li {
+  margin-bottom: 10px;
+}
+.main-nav li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #ccc;
+  border-left: 3px solid transparent;
+  transition: .2s ease-in;
+}
+
+.main-nav li.active a {
+  color: #fff;
+  border-left-color: #ffc107;
+}
+
+.main-nav li a:hover{
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-left-color: #6c757d;
+}
+.documents-link {
+   margin-top: auto;
+   padding: 10px 15px;
+}
+.documents-link a{
+text-decoration: none;
+color: #ccc;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.content-header{
+display: flex;
+  justify-content: space-between;
+margin-bottom: 20px;
+}
+.header-controls {
+  display: flex;
+  gap: 20px;
+}
+.search-container{
+  display: flex;
+  gap: 10px;
+   background-color: rgba(255, 255, 255, 0.08);
+   padding: 8px;
+}
+.filters-btn{
+background: transparent;
+ border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.search-input{
+border: none;
+ background-color: transparent;
+  color: #fff;
+}
+.filter-sort-btn {
+   background: transparent;
+ border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content-section {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.filters-container{
+display: flex;
+flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.date-filters, .payment-filters, .order-number, .city-filter, .status-filter {
+ display: flex;
+ flex-direction: column;
+  flex-basis: 200px;
+  gap: 8px;
+}
+.date-input{
+display: flex;
+  position: relative;
+}
+.date-input-calendar-btn {
+   background: transparent;
+ border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.date-input-field{
+background-color: transparent;
+ border: none;
+  color: #fff;
+  padding: 10px;
+}
+.select-wrapper{
+  position: relative;
+}
+.select-wrapper select{
+background-color: transparent;
+ border: none;
+ color: #fff;
+  padding: 10px;
+ border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.calendar-container {
+position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a354a;
+ padding: 15px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+   gap: 10px;
+}
+.calendar-grid{
+display: grid;
+  grid-template-columns: repeat(7, 1fr);
+   text-align: center;
+   gap: 8px;
+}
+.day-name {
+color: #ccc;
+}
+.day-number {
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.day-number:hover, .day-number.selected-day {
+ background-color: rgba(255, 255, 255, 0.1);
+}
+.status-options-container {
+display: flex;
+flex-direction: column;
+position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a354a;
+ padding: 15px;
+  z-index: 100;
+  display: none;
+  gap: 10px;
+}
+.status-option {
+  padding: 5px 10px;
+  border-radius: 4px;
+   cursor: pointer;
+  display: flex;
+  align-items: center;
+ gap: 10px;
+}
+.status-option.ready {
+background-color: rgba(76, 175, 80, 0.2);
+}
+.status-option.in-progress {
+background-color: rgba(255, 193, 7, 0.2);
+}
+.status-option.canceled {
+ background-color: rgba(244, 67, 54, 0.2);
+}
+
+
+.table-wrapper{
+  overflow-x: auto;
+}
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th, .orders-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.orders-table th {
+  font-weight: bold;
+   color: #ccc;
+}
+.status-in-progress {
+display: inline-flex;
+ align-items: center;
+ gap: 8px;
+}
+
+.status-in-progress button {
+background-color: transparent;
+border: 1px solid rgba(255, 255, 255, 0.3);
+ padding: 8px 10px;
+color: #fff;
+border-radius: 4px;
+ cursor: pointer;
+ transition: .2s ease-in;
+}
+.status-in-progress button:hover {
+  background-color: #2a354a;
+}
+
+.notification-header{
+  display: flex;
+justify-content: space-between;
+  align-items: center;
+margin-bottom: 10px;
+}
+.notification-header button {
+ background-color: transparent;
+  border: none;
+color: #ccc;
+}
+
+
+.dashboard-section{
+padding-top: 10px;
+}
+.dashboard-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  
+}
+.dashboard-item {
+   border-radius: 8px;
+ padding: 20px;
+ display: flex;
+  flex-direction: column;
+ gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+   transition: transform 0.3s ease;
+    cursor: pointer;
+
+}
+.dashboard-item h3{
+margin: 0;
+  font-size: 1.2rem;
+}
+.placeholder-block{
+background-color: rgba(0, 0, 0, 0.116);
+   height: 150px;
+    border-radius: 8px;
+}
+
+.dashboard-item:hover{
+  transform: scale(1.03);
+} 
+
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+body.light {
+  background-color: #a7a7a7;
+  color: #374761;
+}
+body.dark {
+  background-color: #374761;
+  color: #a7a7a7;
+}
+
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.theme-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
