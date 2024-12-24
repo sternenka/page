@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лого</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+          <div class="logo-container">
+            <img src="/assets/logo.png" alt="FotoPrint Logo" class="logo">
+          </div>
+            <div class="user-panel">
+                
+            
+            
+            <nav class="main-nav">
+                <ul>
+                  <li><a href="index.html">Домой</a></li>
+                  <li><a href="users.html">Пользователи</a></li>
+                  <li><a href="banners.html">Баннеры</a></li>
+                   <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="mediafiles.html">Медиафайлы</a></li>
+                  <li><a href="pages.html">Страницы</a></li>
+                </ul>
+            </nav>
+          </div>
+        </aside>
+        <main class="main-content">
+            <header class="content-header">
+               <div class="balance-info">
+                <span></span>
+                <span></span>
+              </div>
+              <div class="header-controls">
+                 <div class="search-container">
+                   <input type="text" class="search-input" placeholder="Поиск">
+                   <button class="filter-sort-btn">
+                    
+                   </button>
+                </div>
+              </div>
+            </header>
+            <section class="content-section dashboard-section">
+              <h2 class="section-title"></h2>
+              <div class="dashboard-grid">
+                   <a href="alldata.html" class="dashboard-item">
+                      <h3>Общие данные</h3>
+                        <div class="placeholder-block"></div>
+                    </a>
+                    <a href="users.html" class="dashboard-item">
+                      <h3>Пользователи</h3>
+                        <div class="placeholder-block"></div>
+                   </a>
+                   <a href="events.html" class="dashboard-item">
+                      <h3>Мероприятия</h3>
+                         <div class="placeholder-block"></div>
+                     </a>
+                     <a href="news.html" class="dashboard-item">
+                      <h3>Новости</h3>
+                       <div class="placeholder-block"></div>
+                    </a>
+                    <a href="banners.html" class="dashboard-item">
+                         <h3>Баннеры</h3>
+                         <div class="placeholder-block"></div>
+                    </a>
+                    <body class="dark"> 
+                      <button class="theme-button" id="themeButton">Изменить тему</button>
+                  
+              </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+
+      function toggleTheme() {
+          const body = document.body;
+          body.classList.toggle('light');
+          body.classList.toggle('dark');
+
+     
+          const theme = body.classList.contains('light') ? 'light' : 'dark';
+          localStorage.setItem('theme', theme);
+      }
+
+
+      window.onload = function() {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme) {
+              document.body.className = savedTheme; 
+          }
+      };
+
+
+      document.getElementById('themeButton').addEventListener('click', toggleTheme);
+  </script>
+</body>
+</html>
